@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Prasanna Venkat Ramana I — Automation Engineer</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Prasanna Venkat Ramana I — Automation Engineer" />
+    <meta name="description" content="I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software." />
+    <meta name="author" content="Prasanna Venkat Ramana I" />
+    <meta name="theme-color" content="#090A0C" />
+    <link rel="canonical" href="https://logicmm.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://logicmm.com/" />
+    <meta property="og:title" content="Prasanna Venkat Ramana I — Automation Engineer" />
+    <meta property="og:description" content="I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software." />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://logicmm.com/" />
+    <meta property="twitter:title" content="Prasanna Venkat Ramana I — Automation Engineer" />
+    <meta property="twitter:description" content="I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software." />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Prasanna Venkat Ramana I",
+      "jobTitle": "Automation Engineer",
+      "url": "https://logicmm.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/logicmm"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "addressCountry": "India"
+      },
+      "description": "I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software."
+    }
+    </script>
+
+    <!-- Google Fonts: Antonio (Condensed Display), Inter (Modern Clean Sans), JetBrains Mono (Technical Monospace) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Open Sauce One Black (Exclusively for LOGICMM Brand Wordmark) -->
+    <link rel="preload" href="/fonts/OpenSauceOne-Black.woff" as="font" type="font/woff" crossorigin />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Immediate Theme Initialization (Prevents Flash of Wrong Theme) -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('logicmm-theme') || localStorage.getItem('theme');
+          var theme = stored;
+          if (!theme) {
+            var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+            theme = prefersLight ? 'light' : 'dark';
+          }
+          if (theme === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            document.documentElement.setAttribute('data-theme', 'light');
+          } else {
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-background text-foreground antialiased selection:bg-accent/30 selection:text-white min-h-screen overflow-x-hidden font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

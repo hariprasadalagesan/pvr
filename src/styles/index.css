@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+@theme {
+  /* Semantic Color Tokens */
+  --color-background: #08090A;
+  --color-background-elevated: #0E1013;
+  --color-surface: #121419;
+  --color-surface-hover: #181B22;
+
+  --color-foreground: #F4F5F8;
+  --color-foreground-muted: #9499A8;
+
+  --color-border: #1E222B;
+  --color-border-strong: #2E3442;
+
+  --color-accent: #5E67E6;
+  --color-accent-hover: #6E77F2;
+  --color-accent-subtle: rgba(94, 103, 230, 0.12);
+
+  --color-success: #0BDE66;
+  --color-danger: #EF4444;
+
+  /* Font Families */
+  --font-display: 'Antonio', sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-logo: 'Open Sauce One Black', 'Open Sauce One', sans-serif;
+
+  /* Viewport Breakpoints */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 430px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1920px;
+
+  /* Industrial Transition Timing */
+  --ease-industrial: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Open Sauce One Black - Exclusively for LOGICMM Brand Logo */
+@font-face {
+  font-family: 'Open Sauce One Black';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Open Sauce One Black'),
+       local('OpenSauceOne-Black'),
+       url('/fonts/OpenSauceOne-Black.woff') format('woff');
+}
+
+.font-logo {
+  font-family: 'Open Sauce One Black', 'Open Sauce One', sans-serif;
+  font-weight: 900;
+}
+
+:root {
+  color-scheme: dark;
+  --color-background: #08090A;
+  --color-background-elevated: #0E1013;
+  --color-surface: #121419;
+  --color-surface-hover: #181B22;
+  --color-foreground: #F4F5F8;
+  --color-foreground-muted: #9499A8;
+  --color-border: #1E222B;
+  --color-border-strong: #2E3442;
+  --color-accent: #5E67E6;
+  --color-accent-hover: #6E77F2;
+  --color-accent-subtle: rgba(94, 103, 230, 0.12);
+  --color-success: #0BDE66;
+  --color-danger: #EF4444;
+
+  /* Badge Specialized Tokens (Dark) */
+  --color-badge-hw-bg: #0E121A;
+  --color-badge-hw-border: #222A3A;
+  --color-badge-hw-text: #8EA2CD;
+  --color-badge-proto-bg: #14101D;
+  --color-badge-proto-border: #2E203E;
+  --color-badge-proto-text: #B896E8;
+}
+
+/* Deliberate Technical Light Theme */
+html.light,
+[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #F8F9FA;
+  --color-background-elevated: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F0F2F6;
+  --color-foreground: #0E1218;
+  --color-foreground-muted: #505664;
+  --color-border: #DDE1E8;
+  --color-border-strong: #C4C9D4;
+  --color-accent: #4F58E2;
+  --color-accent-hover: #3D46D1;
+  --color-accent-subtle: rgba(79, 88, 226, 0.1);
+  --color-success: #059669;
+  --color-danger: #DC2626;
+
+  /* Badge Specialized Tokens (Light) */
+  --color-badge-hw-bg: #EEF3FA;
+  --color-badge-hw-border: #D0DBEC;
+  --color-badge-hw-text: #244B7A;
+  --color-badge-proto-bg: #F4EFFC;
+  --color-badge-proto-border: #DECFF4;
+  --color-badge-proto-text: #6B3FB3;
+}
+
+/* Global Reset & Base Enhancements */
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY HIERARCHY UTILITIES
+   ========================================================================== */
+
+/* Display Typography (Antonio, Bold, Industrial Uppercase) */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.text-display-l {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 0.96;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.text-display-m {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Standard Headings (Inter, Semibold) */
+.text-h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.text-h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.text-h3 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Body Typography (Inter, Highly Readable, Standard Case) */
+.text-body-lg {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-foreground-muted);
+}
+
+.text-body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-foreground-muted);
+}
+
+.text-body-sm {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-foreground-muted);
+}
+
+/* Technical Typography (JetBrains Mono, Small, Engineering Instrumentation) */
+.text-tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.text-tech-meta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: var(--color-foreground-muted);
+}
+
+/* ==========================================================================
+   INDUSTRIAL VISUAL DETAILS
+   ========================================================================== */
+
+/* 1px Technical Hairline Grid */
+.bg-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(30, 34, 43, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 34, 43, 0.4) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+html.light .bg-tech-grid,
+[data-theme="light"] .bg-tech-grid {
+  background-image: 
+    linear-gradient(to right, rgba(14, 18, 24, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 18, 24, 0.07) 1px, transparent 1px);
+}
+
+/* 1px Technical Separator Rule */
+.border-tech-rule {
+  border-color: var(--color-border);
+  border-width: 1px;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-foreground-muted);
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
