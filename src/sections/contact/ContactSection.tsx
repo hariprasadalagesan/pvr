@@ -22,7 +22,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ isPagePrimary = 
   return (
     <section
       id="contact"
-      aria-label="Contact and Engineering Availability"
+      aria-label="Contact and Engineering Inquiries"
       className="relative w-full py-20 sm:py-24 md:py-28 lg:py-32 bg-background border-t border-border/40 overflow-hidden"
     >
       {/* Background technical grid accent */}
@@ -78,7 +78,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ isPagePrimary = 
                   <div className="flex items-center gap-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-status-active animate-pulse" />
                     <span className="font-mono text-xs font-semibold uppercase tracking-widest text-foreground">
-                      {profileData.availability.statusLabel}
+                      DIRECT INQUIRY CHANNEL
                     </span>
                   </div>
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-subtle border border-border/60 text-foreground-subtle uppercase">

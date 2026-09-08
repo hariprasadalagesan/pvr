@@ -204,8 +204,8 @@ export const TechnologySection: React.FC = () => {
                 }`}
               >
                 {/* Category Header */}
-                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 mb-6 border-b border-border/50">
-                  <div className="space-y-2 max-w-2xl">
+                <div className="pb-6 mb-6 border-b border-border/50">
+                  <div className="space-y-2 max-w-3xl">
                     <div className="flex items-center gap-2.5">
                       {getCategoryIcon(category.id)}
                       <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">
@@ -232,14 +232,6 @@ export const TechnologySection: React.FC = () => {
                     <p className="font-sans text-xs sm:text-sm text-foreground-muted leading-relaxed pt-1">
                       {category.description}
                     </p>
-                  </div>
-
-                  {/* Item Count Metric Badge */}
-                  <div className="flex items-center gap-2 self-start md:self-auto px-3 py-1.5 rounded bg-surface-subtle/80 border border-border/60">
-                    <span className="font-mono text-[11px] text-foreground-subtle">COUNT:</span>
-                    <span className="font-mono text-xs font-semibold text-foreground">
-                      {category.items.length.toString().padStart(2, '0')} VERIFIED
-                    </span>
                   </div>
                 </div>
 

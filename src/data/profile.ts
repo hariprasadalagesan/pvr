@@ -14,7 +14,7 @@ export const profileData: Profile = {
   cvUrl: 'https://drive.google.com/uc?export=download&id=1hsH8klrNQCrbIK6qKwUOyFefus7YPRL-',
   availability: {
     isAvailable: true,
-    statusLabel: 'Available for engineering',
+    statusLabel: 'Active',
     currentFocus: 'PLC, EtherCAT Motion & Machine Automation',
     location: 'Bengaluru, Karnataka, India'
   }

@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { navigationItems } from '../../data/navigation';
 import { profileData } from '../../data/profile';
-import { StatusIndicator } from '../ui/StatusIndicator';
 import { Button } from '../ui/Button';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
@@ -106,14 +105,14 @@ export const Navbar: React.FC = () => {
           {/* Brand Monogram & Logotype (Open Sauce One Black font ONLY for LOGICMM) */}
           <Link
             to="/"
-            className="flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 rounded select-none"
+            className="flex items-center gap-2.5 group focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 rounded select-none"
             aria-label="LogicMM Home"
           >
-            <div className="flex items-center gap-2">
-              <span className="font-logo text-2xl sm:text-3xl font-black tracking-wider text-foreground group-hover:text-accent transition-colors">
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <span className="font-logo text-xl sm:text-2xl font-black tracking-wider text-foreground group-hover:text-accent transition-colors">
                 LOGICMM
               </span>
-              <span className="px-1.5 py-0.5 rounded border border-border bg-surface font-mono text-[10px] text-foreground-muted tracking-widest uppercase font-semibold">
+              <span className="px-1.5 py-0.5 rounded border border-border bg-surface font-mono text-[9px] sm:text-[10px] text-foreground-muted tracking-widest uppercase font-semibold">
                 PVR
               </span>
             </div>
@@ -154,14 +153,8 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Desktop Right Telemetry & Actions */}
+          {/* Desktop Right Actions */}
           <div className="hidden md:flex items-center gap-2.5 lg:gap-3">
-            <StatusIndicator
-              size="sm"
-              label={profileData.availability.statusLabel}
-              className="hidden xl:inline-flex"
-            />
-
             <ThemeToggle />
 
             <Button
@@ -212,12 +205,11 @@ export const Navbar: React.FC = () => {
             {/* Nav Links Staggered */}
             <div className="space-y-6">
               <div className="pb-4 border-b border-border flex items-center justify-between">
-                <StatusIndicator
-                  size="sm"
-                  label={profileData.availability.statusLabel}
-                />
+                <span className="font-mono text-xs text-foreground tracking-wider font-semibold uppercase">
+                  SYSTEM DIRECTORY
+                </span>
                 <span className="font-mono text-[11px] text-foreground-muted">
-                  [NODE: {profileData.availability.location}]
+                  [NODE: {profileData.location}]
                 </span>
               </div>
 

@@ -3,7 +3,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Container } from '../../components/common/Container';
 import { TechnicalLabel } from '../../components/ui/TechnicalLabel';
-import { StatusIndicator } from '../../components/ui/StatusIndicator';
 import { Button } from '../../components/ui/Button';
 import { LinkedInIcon } from '../../components/ui/LinkedInIcon';
 import { profileData } from '../../data/profile';
@@ -148,25 +147,18 @@ export const HeroSection: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* 6 & 7. Location, Professional Domain & Availability Status */}
+            {/* 6. Location & Professional Domain */}
             <motion.div
               variants={itemVariants}
               className="w-full flex flex-wrap items-center gap-y-2.5 gap-x-5 pt-3 pb-1 border-t border-border/80 font-mono text-xs text-foreground-muted"
             >
-              <StatusIndicator
-                label="AVAILABLE FOR ENGINEERING"
-                size="sm"
-                isLive={!shouldReduceMotion}
-              />
-
               <div className="flex items-center gap-2">
-                <span className="text-foreground-muted/40 select-none">//</span>
                 <span className="text-foreground-muted uppercase tracking-wider font-medium">
                   BENGALURU, INDIA
                 </span>
               </div>
 
-              <div className="hidden sm:flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <span className="text-foreground-muted/40 select-none">//</span>
                 <span className="text-foreground-muted uppercase tracking-wider font-medium">
                   AUTOMATION / CONTROL SYSTEMS

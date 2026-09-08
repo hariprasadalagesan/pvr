@@ -8,7 +8,7 @@ interface StatusIndicatorProps {
 }
 
 export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
-  label = 'AVAILABLE FOR ENGINEERING',
+  label = 'ACTIVE',
   isLive = true,
   className = '',
   size = 'md'
