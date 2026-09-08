@@ -25,7 +25,7 @@ export const HeroSection: React.FC = () => {
   const containerVariants: Variants = getSectionVariants(shouldReduceMotion);
   const itemVariants: Variants = getItemVariants(shouldReduceMotion);
 
-  // Reusable Engineering Signal Node for LinkedIn
+  // Floating Lottie-Style Animated LinkedIn Element
   const linkedInNode = (
     <motion.a
       href={profileData.linkedIn}
@@ -36,59 +36,23 @@ export const HeroSection: React.FC = () => {
       onMouseLeave={() => setIsLinkedInHovered(false)}
       onFocus={() => setIsLinkedInHovered(true)}
       onBlur={() => setIsLinkedInHovered(false)}
-      whileHover={shouldReduceMotion ? undefined : { y: -2, scale: 1.02 }}
-      whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-      className="group relative inline-flex items-center gap-2.5 px-3 py-1.5 rounded-md border border-border/80 bg-surface/90 hover:bg-surface hover:border-accent/60 transition-all duration-200 font-mono text-xs focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 select-none shadow-[0_2px_12px_rgba(0,0,0,0.25)] cursor-pointer"
+      animate={
+        shouldReduceMotion
+          ? { y: 0 }
+          : {
+              y: [0, -6, 0],
+              transition: {
+                duration: 2.8,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              },
+            }
+      }
+      whileHover={shouldReduceMotion ? undefined : { y: -8, scale: 1.08 }}
+      whileTap={shouldReduceMotion ? undefined : { scale: 0.94 }}
+      className="group relative inline-flex items-center justify-center w-11 h-11 rounded-xl border border-accent/40 bg-surface/90 hover:bg-surface hover:border-accent text-accent shadow-[0_4px_16px_rgba(0,0,0,0.25)] hover:shadow-[0_0_20px_rgba(14,165,233,0.35)] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 select-none cursor-pointer"
     >
-      {/* Precision corner registration ticks */}
-      <span
-        className="absolute -top-1 -left-1 text-[9px] font-mono text-accent/50 group-hover:text-accent select-none pointer-events-none transition-colors"
-        aria-hidden="true"
-      >
-        +
-      </span>
-      <span
-        className="absolute -bottom-1 -right-1 text-[9px] font-mono text-accent/50 group-hover:text-accent select-none pointer-events-none transition-colors"
-        aria-hidden="true"
-      >
-        +
-      </span>
-
-      {/* LinkedIn Icon in technical port enclosure */}
-      <div className="relative flex items-center justify-center w-6 h-6 rounded border border-border bg-background group-hover:border-accent/60 transition-colors">
-        <LinkedInIcon className="w-3.5 h-3.5 text-accent transition-transform duration-200 group-hover:scale-110" />
-      </div>
-
-      {/* Technical Port & Protocol Identifier */}
-      <div className="flex flex-col text-left">
-        <div className="flex items-center gap-1.5 leading-none">
-          <span className="text-[8px] text-foreground-muted tracking-widest uppercase font-mono">
-            COMM_NODE // EXT
-          </span>
-          {/* Subtle live indicator */}
-          <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
-            {!shouldReduceMotion && (
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
-            )}
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-success" />
-          </span>
-        </div>
-        <span className="text-[11px] font-mono tracking-wider font-semibold text-foreground group-hover:text-accent transition-colors leading-tight mt-0.5">
-          LINKEDIN
-        </span>
-      </div>
-
-      {/* External outbound signal indicator */}
-      <svg
-        className="w-3 h-3 text-foreground-muted/60 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={2}
-        aria-hidden="true"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
+      <LinkedInIcon className="w-5 h-5 text-accent transition-transform duration-200 group-hover:scale-110" />
     </motion.a>
   );
 
@@ -216,88 +180,89 @@ export const HeroSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Desktop Right Column: Floating LinkedIn Signal Node + Animated SVG Connection + System Topology */}
-          <div className="hidden lg:flex lg:col-span-4 flex-col items-end justify-center relative select-none">
-            {/* 1. Floating LinkedIn Signal Node (Top-Right of Hero Composition) */}
+          {/* Desktop Right Column: Floating LinkedIn Animation + Subordinated Connection + System Topology */}
+          <div className="hidden lg:flex lg:col-span-4 flex-col items-center justify-center relative select-none w-full max-w-[270px] ml-auto">
+            {/* 1. Floating LinkedIn Animation (Top-Right of Hero Composition) */}
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative z-20 mr-1"
+              className="relative z-20"
             >
               {linkedInNode}
             </motion.div>
 
-            {/* 2. Technical Animated SVG Signal Path (Connects LinkedIn Node down into System Topology) */}
+            {/* 2. Thin Restrained Signal Line (Subordinate connection down into System Topology) */}
             <div
-              className="w-full max-w-[270px] h-14 relative flex justify-end pointer-events-none"
+              className="w-full h-10 relative flex items-center justify-center pointer-events-none"
               aria-hidden="true"
             >
               <svg
                 className="w-full h-full overflow-visible"
-                viewBox="0 0 270 56"
+                viewBox="0 0 270 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                {/* Terminal Junction Markers */}
-                <circle cx="210" cy="2" r="2.5" fill="var(--color-accent)" fillOpacity="0.8" />
-                <circle cx="160" cy="54" r="2.5" fill="var(--color-border-strong)" />
-                <circle cx="210" cy="24" r="1.5" fill="var(--color-border-strong)" />
-                <circle cx="160" cy="24" r="1.5" fill="var(--color-border-strong)" />
+                {/* Top Junction Marker */}
+                <circle cx="135" cy="2" r="2" fill="var(--color-accent)" fillOpacity="0.8" />
 
-                {/* Base Schematic Trace (Dashed Industrial Line) */}
-                <path
-                  d="M 210 2 L 210 24 L 160 24 L 160 54"
+                {/* Base Schematic Trace (Thin Restrained Line) */}
+                <line
+                  x1="135"
+                  y1="2"
+                  x2="135"
+                  y2="36"
                   stroke="var(--color-border-strong)"
-                  strokeWidth="1.5"
-                  strokeDasharray="3 3"
+                  strokeWidth="1"
+                  strokeDasharray="2 3"
                   className={
                     isLinkedInHovered
                       ? 'stroke-accent/70 transition-colors duration-200'
-                      : 'opacity-50 transition-colors duration-200'
+                      : 'opacity-40 transition-colors duration-200'
                   }
                 />
 
-                {/* Animated Signal Packet (Simulates industrial telemetry data moving along the line) */}
+                {/* Animated Signal Packet */}
                 {!shouldReduceMotion && (
-                  <motion.path
-                    d="M 210 2 L 210 24 L 160 24 L 160 54"
+                  <motion.line
+                    x1="135"
+                    y1="2"
+                    x2="135"
+                    y2="36"
                     stroke="var(--color-accent)"
-                    strokeWidth="2"
+                    strokeWidth="1.5"
                     strokeLinecap="round"
-                    strokeDasharray="14 110"
+                    strokeDasharray="6 30"
                     animate={{
-                      strokeDashoffset: [124, 0]
+                      strokeDashoffset: [36, 0],
                     }}
                     transition={{
-                      duration: 2.2,
+                      duration: 2,
                       repeat: Infinity,
-                      ease: 'easeInOut',
-                      repeatDelay: 1.4
+                      ease: 'linear',
                     }}
                   />
                 )}
 
-                {/* Telemetry Channel Notation */}
-                <text
-                  x="152"
-                  y="34"
-                  textAnchor="end"
-                  fill="var(--color-foreground-muted)"
-                  fillOpacity="0.45"
-                  fontSize="8"
-                  fontFamily="JetBrains Mono, monospace"
-                  letterSpacing="0.08em"
-                >
-                  EXT_SIG // 01
-                </text>
-                <path d="M 154 32 L 158 32" stroke="var(--color-border-strong)" strokeWidth="1" />
+                {/* Terminal Downward Arrow Indicator into System Topology */}
+                <path
+                  d="M 131 32 L 135 37 L 139 32"
+                  stroke="var(--color-border-strong)"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={
+                    isLinkedInHovered
+                      ? 'stroke-accent transition-colors duration-200'
+                      : 'opacity-50 transition-colors duration-200'
+                  }
+                />
               </svg>
             </div>
 
             {/* 3. Existing System Topology Card (Subordinate Technical Visualization) */}
             <div
-              className="relative w-full max-w-[270px] p-5 rounded-lg border border-border/60 bg-surface/30 backdrop-blur-xs font-mono text-[11px] text-foreground-muted pointer-events-none"
+              className="relative w-full p-5 rounded-lg border border-border/60 bg-surface/30 backdrop-blur-xs font-mono text-[11px] text-foreground-muted pointer-events-none"
               aria-hidden="true"
             >
               {/* Corner coordinate markings */}

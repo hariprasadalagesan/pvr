@@ -102,15 +102,15 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
-          {/* Brand Monogram & Logotype (Open Sauce One Black font ONLY for LOGICMM) */}
+          {/* Brand Monogram & Logotype (Open Sauce One Black font ONLY for logicmm) */}
           <Link
             to="/"
             className="flex items-center gap-2.5 group focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 rounded select-none"
             aria-label="LogicMM Home"
           >
             <div className="flex items-center gap-2 sm:gap-2.5">
-              <span className="font-logo text-xl sm:text-2xl font-black tracking-wider text-foreground group-hover:text-accent transition-colors">
-                LOGICMM
+              <span className="font-logo text-lg sm:text-xl font-black tracking-wider text-foreground group-hover:text-accent transition-colors">
+                logicmm
               </span>
               <span className="px-1.5 py-0.5 rounded border border-border bg-surface font-mono text-[9px] sm:text-[10px] text-foreground-muted tracking-widest uppercase font-semibold">
                 PVR
