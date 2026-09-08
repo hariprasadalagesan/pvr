@@ -45,8 +45,8 @@ The portfolio is built as a deterministic, responsive, high-performance web appl
 ### Installation
 Clone the repository and install dependencies:
 ```bash
-git clone https://github.com/hariprasadalagesan/pvr.git
-cd pvr
+git clone https://github.com/hariprasadalagesan/pvr1.1.git
+cd pvr1.1
 npm install
 ```
 
