@@ -40,11 +40,11 @@ export interface SocialLink {
 }
 
 export type TechCategoryType =
-  | 'PLC'
-  | 'Programming'
-  | 'Automation & Control'
-  | 'HMI'
-  | 'Research & Engineering Interests';
+  | 'plc'
+  | 'programming'
+  | 'automation'
+  | 'hmi'
+  | 'research';
 
 export interface Technology {
   id: string;
@@ -57,7 +57,7 @@ export interface Technology {
 }
 
 export interface TechnologyCategory {
-  id: string;
+  id: TechCategoryType;
   index: string;
   title: string;
   tagline?: string;
