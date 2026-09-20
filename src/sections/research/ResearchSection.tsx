@@ -176,19 +176,19 @@ export const ResearchSection: React.FC = () => {
           {/* Research Context Callout (Acontis / KingStar / IntervalZero) */}
           <motion.div
             variants={itemVariants}
-            className="rounded-xl border border-amber-500/30 bg-amber-950/10 p-6 sm:p-8"
+            className="rounded-xl border border-amber-500/30 bg-amber-500/5 dark:bg-amber-950/10 p-6 sm:p-8"
           >
             <div className="flex flex-col md:flex-row md:items-start gap-4 sm:gap-6">
-              <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex-shrink-0 self-start">
+              <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex-shrink-0 self-start">
                 <FlaskConical className="w-5 h-5" />
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-semibold uppercase tracking-widest text-amber-300">
+                  <span className="font-mono text-xs font-semibold uppercase tracking-widest text-amber-800 dark:text-amber-300">
                     // {researchContext.title}
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30">
                     TECHNICAL INVESTIGATION
                   </span>
                 </div>

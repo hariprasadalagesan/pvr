@@ -105,6 +105,7 @@ export const Navbar: React.FC = () => {
           {/* Brand Monogram & Logotype (Open Sauce One Black font for logicmm.com) */}
           <Link
             to="/"
+            onClick={() => setIsMobileMenuOpen(false)}
             className="flex items-center group focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 rounded select-none"
             aria-label="logicmm.com Home"
           >

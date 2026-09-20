@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/navigation/Navbar';
 import { Footer } from './components/navigation/Footer';
+import { GlobalLinkedIn } from './components/common/GlobalLinkedIn';
 import { ScrollToTop } from './utils/ScrollToTop';
 
 import { HomePage } from './pages/HomePage';
@@ -40,6 +41,7 @@ export const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <GlobalLinkedIn />
       </div>
     </BrowserRouter>
   );

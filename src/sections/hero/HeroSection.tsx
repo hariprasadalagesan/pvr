@@ -3,7 +3,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { Container } from '../../components/common/Container';
 import { Button } from '../../components/ui/Button';
-import { LinkedInIcon } from '../../components/ui/LinkedInIcon';
 import { profileData } from '../../data/profile';
 
 import { getSectionVariants, getItemVariants } from '../../components/motion/motionVariants';
@@ -13,8 +12,7 @@ import { getSectionVariants, getItemVariants } from '../../components/motion/mot
  *
  * Visual Hierarchy:
  * - NAME -> AUTOMATION ENGINEER -> STATEMENT -> METADATA -> CTAS
- * - Desktop Upper-Right: Floating Engineering LinkedIn Signal Node
- * - Mobile: Positioned naturally within the Hero flow without collision or overflow
+ * - Global Floating LinkedIn Signal Node handles cross-route social action
  */
 export const HeroSection: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -22,33 +20,6 @@ export const HeroSection: React.FC = () => {
   // Standardized industrial entrance animation variants
   const containerVariants: Variants = getSectionVariants(shouldReduceMotion);
   const itemVariants: Variants = getItemVariants(shouldReduceMotion);
-
-  // Floating Lottie-Style Animated LinkedIn Element
-  const linkedInNode = (
-    <motion.a
-      href={profileData.linkedIn}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Visit LinkedIn profile"
-      animate={
-        shouldReduceMotion
-          ? { y: 0 }
-          : {
-              y: [0, -6, 0],
-              transition: {
-                duration: 2.8,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              },
-            }
-      }
-      whileHover={shouldReduceMotion ? undefined : { y: -8, scale: 1.08 }}
-      whileTap={shouldReduceMotion ? undefined : { scale: 0.94 }}
-      className="group relative inline-flex items-center justify-center w-11 h-11 rounded-xl border border-accent/40 bg-surface/90 hover:bg-surface hover:border-accent text-accent shadow-[0_4px_16px_rgba(0,0,0,0.25)] hover:shadow-[0_0_20px_rgba(14,165,233,0.35)] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 select-none cursor-pointer"
-    >
-      <LinkedInIcon className="w-5 h-5 text-accent transition-transform duration-200 group-hover:scale-110" />
-    </motion.a>
-  );
 
   return (
     <section
@@ -63,17 +34,6 @@ export const HeroSection: React.FC = () => {
       />
 
       <Container size="xl" className="relative z-10 w-full">
-        {/* Desktop Floating LinkedIn Badge (Top-Right of Hero Composition) */}
-        <div className="hidden lg:block absolute top-0 right-4 sm:right-6 lg:right-8 z-20">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            {linkedInNode}
-          </motion.div>
-        </div>
-
         {/* Main Hero Content */}
         <motion.div
           variants={containerVariants}
@@ -152,16 +112,6 @@ export const HeroSection: React.FC = () => {
             >
               CONTACT ME
             </Button>
-          </motion.div>
-
-          {/* Mobile / Tablet: Floating LinkedIn Signal Node positioned naturally below CTAs */}
-          <motion.div variants={itemVariants} className="lg:hidden pt-3 w-full">
-            <div className="inline-flex flex-col gap-1.5">
-              <span className="font-mono text-[10px] text-foreground-muted/70 tracking-widest uppercase">
-                // PROFESSIONAL SIGNAL
-              </span>
-              <div>{linkedInNode}</div>
-            </div>
           </motion.div>
         </motion.div>
       </Container>

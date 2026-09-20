@@ -115,10 +115,10 @@ export const TechnologySection: React.FC = () => {
                   className={`px-3.5 py-1.5 rounded text-xs font-mono font-medium transition-all duration-150 flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                     isSelected
                       ? cat.isResearch
-                        ? 'bg-amber-500 text-black shadow-sm font-semibold'
+                        ? 'bg-amber-500 text-neutral-950 shadow-sm font-semibold'
                         : 'bg-accent text-white shadow-sm'
                       : cat.isResearch
-                      ? 'bg-amber-950/20 hover:bg-amber-950/40 border border-amber-500/40 text-amber-300'
+                      ? 'bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 text-amber-700 dark:text-amber-300'
                       : 'bg-surface/70 hover:bg-surface border border-border/70 text-foreground-muted hover:text-foreground'
                   }`}
                 >
@@ -137,7 +137,7 @@ export const TechnologySection: React.FC = () => {
                 variants={itemVariants}
                 className={`rounded-xl border p-6 sm:p-8 md:p-10 transition-all duration-200 ${
                   category.isResearch
-                    ? 'border-amber-500/30 bg-amber-950/10 hover:border-amber-500/50'
+                    ? 'border-amber-500/30 bg-amber-500/5 dark:bg-amber-950/10 hover:border-amber-500/50'
                     : 'border-border/80 bg-surface/50 hover:border-border'
                 }`}
               >
@@ -150,8 +150,8 @@ export const TechnologySection: React.FC = () => {
                         [CAT // {category.index}]
                       </span>
                       {category.isResearch && (
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                          <ShieldAlert className="w-3 h-3 text-amber-400" />
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30">
+                          <ShieldAlert className="w-3 h-3 text-amber-600 dark:text-amber-400" />
                           RESEARCH AREA
                         </span>
                       )}
@@ -175,13 +175,13 @@ export const TechnologySection: React.FC = () => {
 
                 {/* Research Partition Disclaimer (Rendered only on Research category) */}
                 {category.isResearch && category.researchNote && (
-                  <div className="mb-6 p-4 rounded-lg bg-amber-950/20 border border-amber-500/30 flex items-start gap-3">
-                    <FlaskConical className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                  <div className="mb-6 p-4 rounded-lg bg-amber-500/10 dark:bg-amber-950/20 border border-amber-500/30 flex items-start gap-3">
+                    <FlaskConical className="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <h4 className="font-mono text-xs font-semibold text-amber-300 uppercase tracking-wider">
+                      <h4 className="font-mono text-xs font-semibold text-amber-800 dark:text-amber-300 uppercase tracking-wider">
                         RESEARCH CONTEXT & TECHNOLOGY INVESTIGATION
                       </h4>
-                      <p className="font-sans text-xs text-amber-200/80 leading-relaxed">
+                      <p className="font-sans text-xs text-amber-900/90 dark:text-amber-200/80 leading-relaxed">
                         {category.researchNote}
                       </p>
                     </div>
@@ -195,7 +195,7 @@ export const TechnologySection: React.FC = () => {
                       key={tech.id}
                       className={`p-3.5 sm:p-4 rounded-lg border transition-all duration-150 flex items-center justify-between group ${
                         category.isResearch
-                          ? 'border-amber-500/20 bg-amber-950/10 hover:border-amber-400/50 hover:bg-amber-950/20'
+                          ? 'border-amber-500/20 bg-amber-500/5 dark:bg-amber-950/10 hover:border-amber-400/50 hover:bg-amber-500/10 dark:hover:bg-amber-950/20'
                           : 'border-border/70 bg-surface-subtle/70 hover:border-accent/50 hover:bg-surface'
                       }`}
                     >
@@ -212,9 +212,9 @@ export const TechnologySection: React.FC = () => {
                       <span
                         className={`text-[10px] font-mono px-2 py-0.5 rounded uppercase tracking-wider ${
                           tech.isResearch
-                            ? 'bg-amber-500/15 text-amber-300 border border-amber-500/25'
+                            ? 'bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30'
                             : tech.isHardware
-                            ? 'bg-blue-950/30 text-blue-300 border border-blue-500/30'
+                            ? 'bg-blue-500/15 text-blue-800 dark:text-blue-300 border border-blue-500/30'
                             : 'bg-surface text-foreground-muted border border-border/50'
                         }`}
                       >
