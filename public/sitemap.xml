@@ -31,7 +31,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://logicmm.com/projects/linear-robot</loc>
+    <loc>https://logicmm.com/projects/cartesian-robot</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

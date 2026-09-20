@@ -78,44 +78,6 @@ export const ResearchSection: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Conceptual Relationship: Industrial Engineering + Software Engineering */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-12 rounded-xl border border-border/70 bg-surface/40 p-6 sm:p-8"
-          >
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-              <div className="space-y-2 max-w-xl">
-                <span className="font-mono text-xs uppercase tracking-widest text-accent font-semibold flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  INVESTIGATION DIRECTION
-                </span>
-                <h3 className="font-display text-xl sm:text-2xl text-foreground uppercase tracking-wide">
-                  HOW INDUSTRIAL CONTROL &amp; SOFTWARE ENGINEERING CONVERGE
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-foreground-muted leading-relaxed">
-                  Investigating how open PC platforms, high-speed fieldbuses, and deterministic runtime software can coordinate complex machines with the flexibility of modern software engineering.
-                </p>
-              </div>
-
-              {/* Conceptual Convergence Diagram */}
-              <div className="flex items-center gap-2 sm:gap-3 font-mono text-xs text-foreground-muted self-start lg:self-auto bg-surface-subtle/80 p-3 sm:p-4 rounded-lg border border-border/60">
-                <div className="text-center px-2 py-1 bg-surface rounded border border-border/50">
-                  <span className="text-foreground block font-semibold text-[11px] sm:text-xs">INDUSTRIAL CONTROL</span>
-                  <span className="text-[10px] text-foreground-subtle block mt-0.5">Fieldbus &amp; Motion</span>
-                </div>
-                <span className="text-accent font-bold">→</span>
-                <div className="text-center px-2 py-1 bg-accent/10 rounded border border-accent/30 text-accent font-semibold text-[11px] sm:text-xs">
-                  REAL-TIME RUNTIMES
-                </div>
-                <span className="text-accent font-bold">←</span>
-                <div className="text-center px-2 py-1 bg-surface rounded border border-border/50">
-                  <span className="text-foreground block font-semibold text-[11px] sm:text-xs">MODERN SOFTWARE</span>
-                  <span className="text-[10px] text-foreground-subtle block mt-0.5">C# &amp; .NET Architecture</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
           {/* Primary Investigation Areas (Prominent Core Topics) */}
           <div className="mb-10">
             <motion.div variants={itemVariants} className="mb-4 flex items-center justify-between">

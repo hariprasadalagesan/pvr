@@ -62,13 +62,13 @@ export const projectsData: Project[] = [
       'PLC programming and troubleshooting in Ladder Logic and Structured Text, with HMI development and hardware integration.'
   },
   {
-    id: 'linear-robot',
-    slug: 'linear-robot',
+    id: 'cartesian-robot',
+    slug: 'cartesian-robot',
     index: '04',
-    title: 'Linear Robot',
+    title: 'Cartesian Robot',
     category: 'MOTION',
     shortDescription:
-      'Multi-axis Cartesian linear robot mechanism for industrial positioning and handling.',
+      'Multi-axis Cartesian robot mechanism for industrial positioning and handling.',
     context:
       'Cartesian multi-axis robotic mechanism performing deterministic linear trajectory profiling and automated part positioning.',
     approach:

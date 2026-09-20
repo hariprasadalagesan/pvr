@@ -38,11 +38,8 @@ export const Footer: React.FC = () => {
                 className="inline-flex items-center gap-2 group focus-visible:outline-2 focus-visible:outline-accent rounded select-none"
                 aria-label="LogicMM Home"
               >
-                <span className="font-logo text-2xl sm:text-3xl font-black tracking-wider text-foreground group-hover:text-accent transition-colors">
-                  LOGICMM
-                </span>
-                <span className="px-1.5 py-0.5 rounded border border-border bg-surface font-mono text-[10px] text-foreground-muted tracking-widest uppercase font-semibold">
-                  PVR
+                <span className="font-logo text-xl sm:text-2xl font-black tracking-wide text-foreground group-hover:text-accent transition-colors">
+                  logicmm.com
                 </span>
               </Link>
               <p className="font-sans text-sm sm:text-base text-foreground-muted leading-relaxed">

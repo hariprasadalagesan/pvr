@@ -84,68 +84,6 @@ export const TechnologySection: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Conceptual Architecture Bridge: Industrial Engineering + Modern Software */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-10 sm:mb-14 rounded-xl border border-border/80 bg-surface/40 p-5 sm:p-6 lg:p-7 relative overflow-hidden"
-          >
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-              <div className="space-y-1.5 max-w-xl">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  <span className="font-mono text-xs uppercase tracking-widest text-accent font-semibold">
-                    CORE SYSTEM POSITIONING
-                  </span>
-                </div>
-                <h3 className="font-display text-xl sm:text-2xl text-foreground uppercase tracking-wide">
-                  INDUSTRIAL ENGINEERING + MODERN SOFTWARE ENGINEERING
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-foreground-muted leading-relaxed">
-                  Deterministic PLC execution, fieldbus motion synchronization, and modern object-oriented software engineered as a cohesive industrial automation ecosystem.
-                </p>
-              </div>
-
-              {/* High-level system relationship nodes */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full lg:w-auto text-left">
-                <div className="p-3 rounded-lg bg-surface-subtle/70 border border-border/60">
-                  <span className="font-mono text-[10px] text-accent block uppercase tracking-wider">
-                    01 // CONTROLLERS
-                  </span>
-                  <span className="font-sans text-xs font-medium text-foreground block mt-0.5">
-                    Deterministic PLCs
-                  </span>
-                  <span className="font-sans text-[11px] text-foreground-muted">
-                    Ladder & Structured Text
-                  </span>
-                </div>
-
-                <div className="p-3 rounded-lg bg-surface-subtle/70 border border-border/60">
-                  <span className="font-mono text-[10px] text-accent block uppercase tracking-wider">
-                    02 // MOTION & BUS
-                  </span>
-                  <span className="font-sans text-xs font-medium text-foreground block mt-0.5">
-                    EtherCAT & Runtimes
-                  </span>
-                  <span className="font-sans text-[11px] text-foreground-muted">
-                    Real-time Synchronization
-                  </span>
-                </div>
-
-                <div className="p-3 rounded-lg bg-surface-subtle/70 border border-border/60">
-                  <span className="font-mono text-[10px] text-accent block uppercase tracking-wider">
-                    03 // SOFTWARE & HMI
-                  </span>
-                  <span className="font-sans text-xs font-medium text-foreground block mt-0.5">
-                    C# / .NET & Visualization
-                  </span>
-                  <span className="font-sans text-[11px] text-foreground-muted">
-                    Telemetry & SCADA
-                  </span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
           {/* Category Filter Controls */}
           <motion.div
             variants={itemVariants}

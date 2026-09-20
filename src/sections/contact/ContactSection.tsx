@@ -95,7 +95,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ isPagePrimary = 
                     {profileData.name}
                   </h3>
                   <p className="font-mono text-xs text-foreground-muted uppercase tracking-wider">
-                    {profileData.primaryTitle} // {profileData.secondaryTitle}
+                    {profileData.primaryTitle}
                   </p>
                 </div>
 

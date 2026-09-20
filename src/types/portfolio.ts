@@ -12,7 +12,7 @@ export interface SystemAvailability {
 export interface Profile {
   name: string;
   primaryTitle: string;
-  secondaryTitle: string;
+  secondaryTitle?: string;
   positioningStatement: string;
   location: string;
   website: string;
@@ -96,7 +96,7 @@ export interface Project {
 export interface Experience {
   id: string;
   company: string;
-  role: string;
+  role?: string;
   period: string;
   startDate: string;
   endDate: string;

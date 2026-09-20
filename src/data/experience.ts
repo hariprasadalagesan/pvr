@@ -68,7 +68,6 @@ export const experienceData: Experience[] = [
   {
     id: 'skd-controls',
     company: 'SKD Controls and Automation',
-    role: 'Jr Automation System Developer',
     period: 'September 2024 – February 2026',
     startDate: '2024-09',
     endDate: '2026-02',

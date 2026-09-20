@@ -79,7 +79,7 @@ npm run preview
 1. **Vacuum Distillation**: Industrial automation system for automated solvent recovery and vacuum distillation control.
 2. **Vision Inspection**: Inline automated quality inspection station integrating optical sensors and high-speed rejection.
 3. **Ultrasonic Cleaning**: Multi-stage industrial ultrasonic cleaning machines across standard production and custom SPM configurations.
-4. **Linear Robot**: Multi-axis Cartesian linear robot mechanism for industrial positioning and handling.
+4. **Cartesian Robot**: Multi-axis Cartesian robot mechanism for industrial positioning and handling.
 5. **Bespoke Machine Automation**: Special-purpose machine (SPM) automation engineered for custom manufacturing operations.
 
 ---

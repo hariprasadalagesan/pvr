@@ -102,20 +102,15 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
-          {/* Brand Monogram & Logotype (Open Sauce One Black font ONLY for logicmm) */}
+          {/* Brand Monogram & Logotype (Open Sauce One Black font for logicmm.com) */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 group focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 rounded select-none"
-            aria-label="LogicMM Home"
+            className="flex items-center group focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 rounded select-none"
+            aria-label="logicmm.com Home"
           >
-            <div className="flex items-center gap-2 sm:gap-2.5">
-              <span className="font-logo text-lg sm:text-xl font-black tracking-wider text-foreground group-hover:text-accent transition-colors">
-                logicmm
-              </span>
-              <span className="px-1.5 py-0.5 rounded border border-border bg-surface font-mono text-[9px] sm:text-[10px] text-foreground-muted tracking-widest uppercase font-semibold">
-                PVR
-              </span>
-            </div>
+            <span className="font-logo text-base sm:text-lg font-black tracking-wide text-foreground group-hover:text-accent transition-colors">
+              logicmm.com
+            </span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -258,7 +253,7 @@ export const Navbar: React.FC = () => {
             <div className="pt-6 mt-6 border-t border-border space-y-4">
               <div className="font-mono text-xs text-foreground-muted space-y-1">
                 <p className="text-foreground font-semibold uppercase">Prasanna Venkat Ramana I</p>
-                <p>{profileData.primaryTitle} &amp; {profileData.secondaryTitle}</p>
+                <p>{profileData.primaryTitle}</p>
                 <p className="text-accent">{profileData.email}</p>
               </div>
 

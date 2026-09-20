@@ -3,7 +3,6 @@ import type { Profile } from '../types/portfolio';
 export const profileData: Profile = {
   name: 'Prasanna Venkat Ramana I',
   primaryTitle: 'Automation Engineer',
-  secondaryTitle: 'Automation System Developer',
   positioningStatement:
     'I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software.',
   location: 'Bengaluru, Karnataka, India',

@@ -137,12 +137,20 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ isPagePrim
 
                       {/* Role & Company Identity */}
                       <div className="mt-4 mb-3">
-                        <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground font-bold uppercase tracking-wider">
-                          {exp.role}
-                        </h3>
-                        <p className="font-sans text-base sm:text-lg font-semibold text-accent/90 mt-0.5">
-                          {exp.company}
-                        </p>
+                        {exp.role ? (
+                          <>
+                            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground font-bold uppercase tracking-wider">
+                              {exp.role}
+                            </h3>
+                            <p className="font-sans text-base sm:text-lg font-semibold text-accent/90 mt-0.5">
+                              {exp.company}
+                            </p>
+                          </>
+                        ) : (
+                          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground font-bold uppercase tracking-wider">
+                            {exp.company}
+                          </h3>
+                        )}
                       </div>
 
                       {/* Verified Focus Summary */}
