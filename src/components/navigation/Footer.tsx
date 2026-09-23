@@ -107,16 +107,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* BOTTOM TIER: Technical Metadata & Copyright */}
-          <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono text-foreground-muted">
-            {/* Technical Detail: Minimal terminal-style metadata with status indicator */}
-            <div className="flex items-center gap-2 text-[11px]">
-              <span className="w-1.5 h-1.5 rounded-full bg-success inline-block" aria-hidden="true" />
-              <span className="tracking-wider text-foreground-muted">[SYS_NODE: BENGALURU, IN]</span>
-              <span className="text-border-strong select-none" aria-hidden="true">/</span>
-              <span className="tracking-wider text-foreground-muted/70">CTRL_BUS: NORMAL</span>
-            </div>
-
+          {/* BOTTOM TIER: Copyright */}
+          <div className="pt-8 flex items-center justify-between text-xs font-mono text-foreground-muted">
             <p className="text-[11px] tracking-wider text-foreground-muted/80">
               © {currentYear} LOGICMM. ALL RIGHTS RESERVED.
             </p>

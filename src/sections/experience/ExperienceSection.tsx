@@ -41,8 +41,8 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ isPagePrim
           className="flex flex-col"
         >
           {/* Section Introduction */}
-          <div className="flex flex-col mb-12 sm:mb-16 md:mb-20 max-w-3xl">
-            <motion.div variants={itemVariants} className="mb-3">
+          <div className="flex flex-col mb-8 sm:mb-12 md:mb-16 max-w-3xl">
+            <motion.div variants={itemVariants} className="mb-2.5 sm:mb-3">
               <TechnicalLabel
                 text="03 / ENGINEERING TIMELINE"
                 variant="accent"
@@ -52,32 +52,32 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ isPagePrim
 
             <motion.div variants={itemVariants}>
               {isPagePrimary ? (
-                <h1 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[0.95] select-none">
+                <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[1.02] sm:leading-[0.95] select-none">
                   ENGINEERING <span className="text-foreground/90">EXPERIENCE</span>
                 </h1>
               ) : (
-                <h2 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[0.95] select-none">
+                <h2 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[1.02] sm:leading-[0.95] select-none">
                   ENGINEERING <span className="text-foreground/90">EXPERIENCE</span>
                 </h2>
               )}
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <p className="font-sans text-base sm:text-lg text-foreground-muted leading-relaxed font-normal mt-4">
+              <p className="font-sans text-sm sm:text-base md:text-lg text-foreground-muted leading-relaxed font-normal mt-3 sm:mt-4">
                 A progression through industrial automation, machine control and automation software.
               </p>
             </motion.div>
           </div>
 
           {/* Structured Vertical Engineering Timeline */}
-          <div className="relative pl-6 sm:pl-10 md:pl-12 max-w-5xl">
+          <div className="relative max-w-5xl">
             {/* Vertical Timeline Backbone Rule */}
             <div
-              className="absolute left-2.5 sm:left-4 top-4 bottom-8 w-0.5 bg-border-strong"
+              className="absolute left-4 sm:left-6 md:left-8 top-7 bottom-8 -translate-x-1/2 w-[2px] bg-gradient-to-b from-accent/60 via-border-strong to-border-strong/30 pointer-events-none"
               aria-hidden="true"
             />
 
-            <div className="space-y-10 sm:space-y-14">
+            <div className="space-y-8 sm:space-y-12 md:space-y-14">
               {experienceData.map((exp: Experience) => {
                 const isCurrent = exp.isCurrent;
 
@@ -85,25 +85,39 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ isPagePrim
                   <motion.article
                     key={exp.id}
                     variants={itemVariants}
-                    className="relative group"
+                    className="relative pl-10 xs:pl-12 sm:pl-16 md:pl-20 group"
                   >
                     {/* Timeline Node Marker */}
-                    <div
-                      className={`absolute -left-6 sm:-left-10 md:-left-12 top-6 w-4 h-4 rounded-full border-2 transition-transform duration-200 ${
-                        isCurrent
-                          ? 'bg-accent border-white shadow-[0_0_10px_#5E67E6] scale-110'
-                          : 'bg-surface border-border-strong group-hover:border-accent/70'
-                      }`}
-                      aria-hidden="true"
-                    >
-                      {isCurrent && (
-                        <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-40" />
-                      )}
-                    </div>
+                    {isCurrent ? (
+                      /* Active Marker: Concentric outer ring + solid core + gentle pulse */
+                      <div
+                        className="absolute left-4 sm:left-6 md:left-8 top-7 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10 select-none pointer-events-none"
+                        aria-hidden="true"
+                      >
+                        {/* Subtle pulse ring (respects prefers-reduced-motion) */}
+                        <span className="absolute -inset-1.5 rounded-full bg-accent/25 motion-safe:animate-ping opacity-30 pointer-events-none" />
+
+                        {/* Outer distinct circular ring */}
+                        <div className="relative w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full border-2 border-accent bg-background shadow-[0_0_12px_rgba(94,103,230,0.3)] flex items-center justify-center">
+                          {/* Inner solid accent core clearly distinguishable from outer ring */}
+                          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent motion-safe:animate-pulse" />
+                        </div>
+                      </div>
+                    ) : (
+                      /* Inactive Marker: Distinct hollow node with subtle center pip */
+                      <div
+                        className="absolute left-4 sm:left-6 md:left-8 top-7 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10 select-none pointer-events-none"
+                        aria-hidden="true"
+                      >
+                        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full border-2 border-border-strong bg-background group-hover:border-accent/70 transition-colors flex items-center justify-center">
+                          <span className="w-1 h-1 rounded-full bg-border-strong/80 group-hover:bg-accent/70 transition-colors" />
+                        </div>
+                      </div>
+                    )}
 
                     {/* Experience Card Container */}
                     <div
-                      className={`rounded-xl border p-6 sm:p-7 md:p-8 transition-all duration-200 ${
+                      className={`rounded-xl border p-4 xs:p-5 sm:p-7 md:p-8 transition-all duration-200 ${
                         isCurrent
                           ? 'bg-surface-elevated/90 border-accent/60 shadow-[0_0_30px_rgba(94,103,230,0.12)] ring-1 ring-accent/30'
                           : 'bg-surface/50 border-border/80 hover:bg-surface/80 hover:border-border-strong'
