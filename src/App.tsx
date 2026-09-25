@@ -12,6 +12,7 @@ import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { ExperiencePage } from './pages/ExperiencePage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { TechnologyPage } from './pages/TechnologyPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 export const App: React.FC = () => {
@@ -35,6 +36,7 @@ export const App: React.FC = () => {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
             <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/technology" element={<TechnologyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />

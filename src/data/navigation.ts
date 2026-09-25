@@ -5,6 +5,7 @@ export const navigationItems: NavigationItem[] = [
   { id: 'systems', label: 'Systems', path: '/systems' },
   { id: 'projects', label: 'Projects', path: '/projects' },
   { id: 'experience', label: 'Experience', path: '/experience' },
+  { id: 'technology', label: 'Technology', path: '/technology' },
   { id: 'about', label: 'About', path: '/about' },
   { id: 'contact', label: 'Contact', path: '/contact' }
 ];

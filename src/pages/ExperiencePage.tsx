@@ -6,8 +6,8 @@ export const ExperiencePage: React.FC = () => {
   return (
     <div className="pt-20">
       <SEO
-        title="Professional Experience & Timeline"
-        description="Verified career history across Waveultra Engineers Automation, SKD Controls, and personal R&D laboratory."
+        title="Automation Engineer Experience | Industrial Automation | Prasanna Venkat Ramana"
+        description="Professional automation engineering experience of Prasanna Venkat Ramana across Waveultra Engineers Automation, personal automation research laboratory, and SKD Controls."
         canonicalPath="/experience"
       />
       <ExperienceSection isPagePrimary />

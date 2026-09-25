@@ -253,7 +253,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Footer Telemetry & Direct Contact */}
             <div className="pt-6 mt-6 border-t border-border space-y-4">
               <div className="font-mono text-xs text-foreground-muted space-y-1">
-                <p className="text-foreground font-semibold uppercase">Prasanna Venkat Ramana I</p>
+                <p className="text-foreground font-semibold uppercase">Prasanna Venkat Ramana</p>
                 <p>{profileData.primaryTitle}</p>
                 <p className="text-accent">{profileData.email}</p>
               </div>

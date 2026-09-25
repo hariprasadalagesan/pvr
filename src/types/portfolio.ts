@@ -1,5 +1,5 @@
 /**
- * Core Domain Types for Prasanna Venkat Ramana I - Portfolio Architecture
+ * Core Domain Types for Prasanna Venkat Ramana - Portfolio Architecture
  */
 
 export interface SystemAvailability {

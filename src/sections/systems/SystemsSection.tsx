@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { Cpu, Monitor, Network, Terminal } from 'lucide-react';
+import { Cpu, Monitor, Network, Terminal, ArrowRight } from 'lucide-react';
 import { Container } from '../../components/common/Container';
 import { TechnicalLabel } from '../../components/ui/TechnicalLabel';
 import { systemsData } from '../../data/systems';
@@ -61,7 +62,7 @@ export const SystemsSection: React.FC<SystemsSectionProps> = ({ isPagePrimary = 
             <motion.div variants={itemVariants}>
               {isPagePrimary ? (
                 <h1 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[0.95] select-none">
-                  SYSTEMS <span className="text-foreground/90">I BUILD</span>
+                  INDUSTRIAL AUTOMATION <span className="text-foreground/90">SYSTEMS</span>
                 </h1>
               ) : (
                 <h2 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[0.95] select-none">
@@ -176,6 +177,23 @@ export const SystemsSection: React.FC<SystemsSectionProps> = ({ isPagePrimary = 
             <span className="text-foreground-muted/60 text-[11px] uppercase tracking-wider shrink-0">
               INTERCONNECTED ARCHITECTURE
             </span>
+          </motion.div>
+
+          {/* Contextual Link to Verified Applied Projects */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-6 pt-6 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+          >
+            <p className="font-sans text-xs sm:text-sm text-foreground-muted">
+              Explore how these control domains are applied in physical machines and engineering case studies.
+            </p>
+            <Link
+              to="/projects"
+              className="group inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-accent hover:text-accent-hover transition-colors shrink-0"
+            >
+              <span>VIEW INDUSTRIAL PROJECTS</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </motion.div>
         </motion.div>
       </Container>

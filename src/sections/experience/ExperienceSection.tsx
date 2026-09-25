@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { Container } from '../../components/common/Container';
 import { TechnicalLabel } from '../../components/ui/TechnicalLabel';
 import { StatusIndicator } from '../../components/ui/StatusIndicator';
@@ -217,6 +219,33 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ isPagePrim
                 );
               })}
             </div>
+
+            {/* Contextual Internal Linking to Systems & Projects */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-10 sm:mt-12 pt-6 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs"
+            >
+              <span className="text-foreground-muted">
+                Explore corresponding technical work:
+              </span>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <Link
+                  to="/systems"
+                  className="group inline-flex items-center gap-1.5 text-accent hover:text-accent-hover font-semibold uppercase tracking-wider transition-colors"
+                >
+                  <span>CONTROL SYSTEMS</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <span className="text-border-strong hidden sm:inline" aria-hidden="true">//</span>
+                <Link
+                  to="/projects"
+                  className="group inline-flex items-center gap-1.5 text-accent hover:text-accent-hover font-semibold uppercase tracking-wider transition-colors"
+                >
+                  <span>INDUSTRIAL PROJECTS</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </Container>

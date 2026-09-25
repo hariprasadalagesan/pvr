@@ -1,29 +1,42 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { profileData } from '../../data/profile';
 
-interface SEOProps {
+export interface SEOProps {
   title?: string;
   description?: string;
   canonicalPath?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 export const SEO: React.FC<SEOProps> = ({
   title,
-  description = profileData.positioningStatement,
-  canonicalPath = ''
+  description,
+  canonicalPath = '/',
+  ogType = 'website',
+  noindex = false,
+  schema
 }) => {
   useEffect(() => {
-    // Dynamic Page Title
-    const formattedTitle = title
-      ? `${title} | ${profileData.name} — ${profileData.primaryTitle}`
-      : `${profileData.name} — ${profileData.primaryTitle}`;
-    document.title = formattedTitle;
+    // Primary title calculation
+    const defaultTitle = `${profileData.name} | ${profileData.primaryTitle} | Industrial Automation`;
+    const finalTitle = title ? title.trim() : defaultTitle;
+    document.title = finalTitle;
 
-    const fullUrl = `${profileData.website}${canonicalPath}`;
+    // Primary description calculation
+    const finalDescription = (description || profileData.positioningStatement).trim();
 
-    // Helper to create or update meta tag
-    const setMetaTag = (attribute: string, key: string, content: string) => {
-      let element = document.querySelector(`meta[${attribute}="${key}"]`);
+    // Canonical URL normalization (strict HTTPS logicmm.com without query, hash, or trailing duplicates)
+    const normalizedPath = canonicalPath.replace(/[?#].*$/, '').trim();
+    const cleanPath = normalizedPath === '/' || normalizedPath === ''
+      ? '/'
+      : `/${normalizedPath.replace(/^\/+|\/+$/g, '')}`;
+    const canonicalUrl = `https://logicmm.com${cleanPath}`;
+
+    // Helper to create or update meta tag by name or property
+    const setMetaTag = (attribute: 'name' | 'property', key: string, content: string) => {
+      let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
       if (!element) {
         element = document.createElement('meta');
         element.setAttribute(attribute, key);
@@ -33,31 +46,59 @@ export const SEO: React.FC<SEOProps> = ({
     };
 
     // Primary Meta Tags
-    setMetaTag('name', 'title', formattedTitle);
-    setMetaTag('name', 'description', description);
+    setMetaTag('name', 'title', finalTitle);
+    setMetaTag('name', 'description', finalDescription);
+    setMetaTag('name', 'author', profileData.name);
 
-    // Canonical Tag
-    let canonical = document.querySelector('link[rel="canonical"]');
+    // Robots meta directive
+    if (noindex) {
+      setMetaTag('name', 'robots', 'noindex, nofollow');
+    } else {
+      setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    }
+
+    // Canonical Link Tag
+    let canonical = document.head.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', fullUrl);
+    canonical.setAttribute('href', canonicalUrl);
 
-    // Open Graph
-    setMetaTag('property', 'og:title', formattedTitle);
-    setMetaTag('property', 'og:description', description);
-    setMetaTag('property', 'og:url', fullUrl);
-    setMetaTag('property', 'og:type', 'website');
+    // Open Graph Metadata
+    setMetaTag('property', 'og:title', finalTitle);
+    setMetaTag('property', 'og:description', finalDescription);
+    setMetaTag('property', 'og:url', canonicalUrl);
+    setMetaTag('property', 'og:type', ogType);
+    setMetaTag('property', 'og:site_name', 'LogicMM');
+    setMetaTag('property', 'og:locale', 'en_US');
 
-    // Twitter
-    setMetaTag('property', 'twitter:title', formattedTitle);
-    setMetaTag('property', 'twitter:description', description);
-    setMetaTag('property', 'twitter:url', fullUrl);
+    // Twitter Card Metadata
+    setMetaTag('name', 'twitter:card', 'summary');
+    setMetaTag('name', 'twitter:title', finalTitle);
+    setMetaTag('name', 'twitter:description', finalDescription);
+    setMetaTag('name', 'twitter:url', canonicalUrl);
+    // Legacy property compatibility for scrapers looking for property="twitter:*"
     setMetaTag('property', 'twitter:card', 'summary');
-  }, [title, description, canonicalPath]);
+    setMetaTag('property', 'twitter:title', finalTitle);
+    setMetaTag('property', 'twitter:description', finalDescription);
+    setMetaTag('property', 'twitter:url', canonicalUrl);
+
+    // Page-specific JSON-LD Structured Data
+    const existingScript = document.head.querySelector('script#page-structured-data');
+    if (schema) {
+      const scriptElement = existingScript || document.createElement('script');
+      scriptElement.setAttribute('id', 'page-structured-data');
+      scriptElement.setAttribute('type', 'application/ld+json');
+      scriptElement.textContent = JSON.stringify(schema, null, 2);
+      if (!existingScript) {
+        document.head.appendChild(scriptElement);
+      }
+    } else if (existingScript) {
+      existingScript.remove();
+    }
+  }, [title, description, canonicalPath, ogType, noindex, schema]);
 
   return null;
 };
-

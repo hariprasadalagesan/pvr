@@ -7,8 +7,8 @@ export const SystemsPage: React.FC = () => {
   return (
     <div className="pt-20">
       <SEO
-        title="Industrial Systems & Architecture"
-        description="Engineering domains, machine automation systems, and real-time fieldbus architectures."
+        title="Industrial Automation Systems | PLC, HMI & Motion Control | LogicMM"
+        description="Industrial automation systems engineered across PLC architectures, human-machine interfaces (HMI), industrial communication networks, motion control, and automation software."
         canonicalPath="/systems"
       />
       <SystemsSection isPagePrimary />

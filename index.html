@@ -3,45 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Prasanna Venkat Ramana I — Automation Engineer</title>
+    <title>Prasanna Venkat Ramana | Automation Engineer | Industrial Automation</title>
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Prasanna Venkat Ramana I — Automation Engineer" />
-    <meta name="description" content="I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software." />
-    <meta name="author" content="Prasanna Venkat Ramana I" />
+    <meta name="title" content="Prasanna Venkat Ramana | Automation Engineer | Industrial Automation" />
+    <meta name="description" content="Prasanna Venkat Ramana is an Automation Engineer based in Bengaluru, Karnataka, India, specializing in industrial automation systems, PLC programming, HMI development, motion control, and machine automation." />
+    <meta name="author" content="Prasanna Venkat Ramana" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="theme-color" content="#090A0C" />
     <link rel="canonical" href="https://logicmm.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://logicmm.com/" />
-    <meta property="og:title" content="Prasanna Venkat Ramana I — Automation Engineer" />
-    <meta property="og:description" content="I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software." />
+    <meta property="og:site_name" content="LogicMM" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Prasanna Venkat Ramana | Automation Engineer | Industrial Automation" />
+    <meta property="og:description" content="Prasanna Venkat Ramana is an Automation Engineer based in Bengaluru, Karnataka, India, specializing in industrial automation systems, PLC programming, HMI development, motion control, and machine automation." />
 
     <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://logicmm.com/" />
+    <meta name="twitter:title" content="Prasanna Venkat Ramana | Automation Engineer | Industrial Automation" />
+    <meta name="twitter:description" content="Prasanna Venkat Ramana is an Automation Engineer based in Bengaluru, Karnataka, India, specializing in industrial automation systems, PLC programming, HMI development, motion control, and machine automation." />
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content="https://logicmm.com/" />
-    <meta property="twitter:title" content="Prasanna Venkat Ramana I — Automation Engineer" />
-    <meta property="twitter:description" content="I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software." />
+    <meta property="twitter:title" content="Prasanna Venkat Ramana | Automation Engineer | Industrial Automation" />
+    <meta property="twitter:description" content="Prasanna Venkat Ramana is an Automation Engineer based in Bengaluru, Karnataka, India, specializing in industrial automation systems, PLC programming, HMI development, motion control, and machine automation." />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Coherent Entity Graph Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Prasanna Venkat Ramana I",
-      "jobTitle": "Automation Engineer",
-      "url": "https://logicmm.com/",
-      "sameAs": [
-        "https://www.linkedin.com/in/logicmm"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "addressCountry": "India"
-      },
-      "description": "I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software."
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://logicmm.com/#website",
+          "url": "https://logicmm.com/",
+          "name": "LogicMM",
+          "description": "Industrial automation systems portfolio of Prasanna Venkat Ramana, Automation Engineer.",
+          "publisher": {
+            "@id": "https://logicmm.com/#person"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://logicmm.com/#person",
+          "name": "Prasanna Venkat Ramana",
+          "jobTitle": "Automation Engineer",
+          "description": "Automation Engineer based in Bengaluru, Karnataka, India, building industrial automation systems across PLCs, HMI, industrial communication, motion control, and software.",
+          "url": "https://logicmm.com/",
+          "sameAs": [
+            "https://www.linkedin.com/in/logicmm"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "India"
+          },
+          "knowsAbout": [
+            "Industrial Automation",
+            "PLC Programming",
+            "Human-Machine Interfaces (HMI)",
+            "Motion Control",
+            "EtherCAT",
+            "CODESYS",
+            "Industrial Communication",
+            "Machine Automation",
+            "Automation Software"
+          ]
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://logicmm.com/#profilepage",
+          "url": "https://logicmm.com/",
+          "name": "Prasanna Venkat Ramana | Automation Engineer | Industrial Automation",
+          "isPartOf": {
+            "@id": "https://logicmm.com/#website"
+          },
+          "mainEntity": {
+            "@id": "https://logicmm.com/#person"
+          },
+          "description": "Prasanna Venkat Ramana is an Automation Engineer based in Bengaluru, Karnataka, India, specializing in industrial automation systems, PLC programming, HMI development, motion control, and machine automation."
+        }
+      ]
     }
     </script>
 
@@ -80,6 +127,20 @@
           document.documentElement.setAttribute('data-theme', 'dark');
         }
       })();
+    </script>
+
+    <!-- SPA redirect decoder for static hosting direct route navigation -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
     </script>
   </head>
   <body class="bg-background text-foreground antialiased selection:bg-accent/30 selection:text-white min-h-screen overflow-x-hidden font-sans">

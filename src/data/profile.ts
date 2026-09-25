@@ -1,7 +1,7 @@
 import type { Profile } from '../types/portfolio';
 
 export const profileData: Profile = {
-  name: 'Prasanna Venkat Ramana I',
+  name: 'Prasanna Venkat Ramana',
   primaryTitle: 'Automation Engineer',
   positioningStatement:
     'I build industrial automation systems across PLCs, HMI, industrial communication, motion control and software.',

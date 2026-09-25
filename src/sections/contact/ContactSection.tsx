@@ -52,7 +52,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ isPagePrimary = 
             <motion.div variants={itemVariants}>
               {isPagePrimary ? (
                 <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[1.02] sm:leading-[0.95] select-none">
-                  INITIATE A <span className="text-foreground/90">CONVERSATION</span>
+                  CONTACT <span className="text-foreground/90">PRASANNA VENKAT RAMANA</span>
                 </h1>
               ) : (
                 <h2 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[1.02] sm:leading-[0.95] select-none">
@@ -140,7 +140,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ isPagePrimary = 
                 href={profileData.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Connect with Prasanna Venkat Ramana I on LinkedIn (opens in new tab)"
+                aria-label="Connect with Prasanna Venkat Ramana on LinkedIn (opens in new tab)"
                 className="group rounded-xl border border-border/80 bg-surface/50 hover:bg-surface/90 hover:border-accent/50 p-4 xs:p-5 sm:p-6 md:p-7 transition-all duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 sm:gap-4 block focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
               >
                 <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">

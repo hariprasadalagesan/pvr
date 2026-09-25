@@ -47,12 +47,41 @@ export const ProjectDetailPage: React.FC = () => {
   const nextProject =
     currentIndex < projectsData.length - 1 ? projectsData[currentIndex + 1] : null;
 
+  const projectDescription =
+    project.shortDescription || project.context || 'Verified industrial automation engineering project.';
+
+  const projectSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    '@id': `https://logicmm.com/projects/${project.slug}#article`,
+    isPartOf: {
+      '@id': 'https://logicmm.com/#website'
+    },
+    headline: `${project.title} | Industrial Automation Project | LogicMM`,
+    description: projectDescription,
+    url: `https://logicmm.com/projects/${project.slug}`,
+    author: {
+      '@id': 'https://logicmm.com/#person'
+    },
+    publisher: {
+      '@id': 'https://logicmm.com/#person'
+    },
+    about: {
+      '@type': 'Thing',
+      name: project.title,
+      description: project.context || project.shortDescription
+    },
+    keywords: project.technologies ? project.technologies.join(', ') : 'Industrial Automation'
+  };
+
   return (
     <div className="pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24 bg-background min-h-screen">
       <SEO
-        title={`${project.title} — Engineering Case Study`}
-        description={project.shortDescription || project.context || 'Industrial automation case study.'}
+        title={`${project.title} | Industrial Automation Project | LogicMM`}
+        description={projectDescription}
         canonicalPath={`/projects/${project.slug}`}
+        ogType="article"
+        schema={projectSchema}
       />
 
       <Container size="xl">
@@ -64,11 +93,11 @@ export const ProjectDetailPage: React.FC = () => {
           className="mb-8"
         >
           <Link
-            to="/#projects"
+            to="/projects"
             className="group inline-flex items-center gap-2 font-mono text-xs text-foreground-muted hover:text-foreground transition-colors uppercase tracking-wider"
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-            <span>[RETURN TO CASE STUDIES]</span>
+            <span>[RETURN TO PROJECTS]</span>
           </Link>
         </motion.div>
 
@@ -277,6 +306,13 @@ export const ProjectDetailPage: React.FC = () => {
           ) : (
             <div />
           )}
+
+          <Link
+            to="/projects"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border/70 hover:border-accent hover:text-accent text-foreground-muted font-mono text-[11px] uppercase tracking-wider transition-colors"
+          >
+            <span>ALL PROJECTS</span>
+          </Link>
 
           {nextProject && (
             <Link

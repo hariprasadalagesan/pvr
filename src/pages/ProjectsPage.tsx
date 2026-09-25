@@ -28,8 +28,8 @@ export const ProjectsPage: React.FC = () => {
   return (
     <div className="pt-20">
       <SEO
-        title="Industrial Projects & Engineering Case Studies"
-        description="Verified industrial automation engineering case studies across process control, vision, machine automation, and real-time motion."
+        title="Industrial Automation Projects | PLC, HMI & Machine Automation | LogicMM"
+        description="Verified industrial automation projects and engineering case studies including Cartesian Robot, Vision Inspection, Ultrasonic Cleaning, Vacuum Distillation, and Bespoke Machine Automation."
         canonicalPath="/projects"
       />
       <Section spacing="normal">
@@ -37,7 +37,7 @@ export const ProjectsPage: React.FC = () => {
           <div className="flex flex-col mb-12 max-w-3xl">
             <TechnicalLabel text="PROJECT REPOSITORY // 05" variant="accent" prefix="//" className="mb-3" />
             <h1 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[0.95] select-none">
-              ENGINEERING <span className="text-foreground/90">CASE STUDIES</span>
+              INDUSTRIAL AUTOMATION <span className="text-foreground/90">PROJECTS</span>
             </h1>
             <p className="font-sans text-base sm:text-lg text-foreground-muted leading-relaxed font-normal mt-4">
               Verified industrial automation work presented as technical case study records.

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { Cpu, Code2, Network, Monitor, FlaskConical, Layers, ShieldAlert } from 'lucide-react';
+import { Cpu, Code2, Network, Monitor, FlaskConical, Layers, ShieldAlert, ArrowRight } from 'lucide-react';
 import { Container } from '../../components/common/Container';
 import { TechnicalLabel } from '../../components/ui/TechnicalLabel';
 import { technologyCategories } from '../../data/technologies';
@@ -9,7 +10,11 @@ import type { TechnologyCategory, Technology } from '../../types/portfolio';
 
 import { getSectionVariants, getItemVariants } from '../../components/motion/motionVariants';
 
-export const TechnologySection: React.FC = () => {
+interface TechnologySectionProps {
+  isPagePrimary?: boolean;
+}
+
+export const TechnologySection: React.FC<TechnologySectionProps> = ({ isPagePrimary = false }) => {
   const shouldReduceMotion = useReducedMotion();
   const [activeCategoryId, setActiveCategoryId] = useState<string>('all');
 
@@ -72,9 +77,15 @@ export const TechnologySection: React.FC = () => {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h2 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[1.02] sm:leading-[0.95] select-none">
-                TOOLS & <span className="text-foreground/90">TECHNOLOGIES</span>
-              </h2>
+              {isPagePrimary ? (
+                <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[1.02] sm:leading-[0.95] select-none">
+                  TOOLS &amp; <span className="text-foreground/90">TECHNOLOGIES</span>
+                </h1>
+              ) : (
+                <h2 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[1.02] sm:leading-[0.95] select-none">
+                  TOOLS &amp; <span className="text-foreground/90">TECHNOLOGIES</span>
+                </h2>
+              )}
             </motion.div>
 
             <motion.div variants={itemVariants}>
@@ -258,6 +269,33 @@ export const TechnologySection: React.FC = () => {
               ))}
             </motion.div>
           </AnimatePresence>
+
+          {/* Contextual Navigation to Systems & Projects */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-10 sm:mt-12 pt-6 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs"
+          >
+            <span className="text-foreground-muted">
+              See these technologies in machine applications:
+            </span>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <Link
+                to="/systems"
+                className="group inline-flex items-center gap-1.5 text-accent hover:text-accent-hover font-semibold uppercase tracking-wider transition-colors"
+              >
+                <span>SYSTEM ARCHITECTURE</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <span className="text-border-strong hidden sm:inline" aria-hidden="true">//</span>
+              <Link
+                to="/projects"
+                className="group inline-flex items-center gap-1.5 text-accent hover:text-accent-hover font-semibold uppercase tracking-wider transition-colors"
+              >
+                <span>APPLIED PROJECTS</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </motion.div>
         </motion.div>
       </Container>
     </section>

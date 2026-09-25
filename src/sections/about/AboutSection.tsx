@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { Briefcase, GraduationCap, Compass, Cpu, Layers } from 'lucide-react';
+import { Briefcase, GraduationCap, Compass, Cpu, Layers, ArrowRight } from 'lucide-react';
 import { Container } from '../../components/common/Container';
 import { TechnicalLabel } from '../../components/ui/TechnicalLabel';
 
@@ -51,7 +52,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ isPagePrimary = fals
             <motion.div variants={itemVariants}>
               {isPagePrimary ? (
                 <h1 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[0.95] select-none">
-                  ENGINEERING <span className="text-foreground/90">PERSPECTIVE</span>
+                  ABOUT <span className="text-foreground/90">PRASANNA VENKAT RAMANA</span>
                 </h1>
               ) : (
                 <h2 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold uppercase tracking-tight text-foreground leading-[0.95] select-none">
@@ -197,6 +198,33 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ isPagePrimary = fals
               </div>
             </motion.div>
           </div>
+
+          {/* Contextual Links to Experience and Projects */}
+          <motion.div
+            variants={itemVariants}
+            className="pt-6 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs"
+          >
+            <span className="text-foreground-muted">
+              Explore professional background &amp; engineering records:
+            </span>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <Link
+                to="/experience"
+                className="group inline-flex items-center gap-1.5 text-accent hover:text-accent-hover font-semibold uppercase tracking-wider transition-colors"
+              >
+                <span>CAREER EXPERIENCE</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <span className="text-border-strong hidden sm:inline" aria-hidden="true">//</span>
+              <Link
+                to="/projects"
+                className="group inline-flex items-center gap-1.5 text-accent hover:text-accent-hover font-semibold uppercase tracking-wider transition-colors"
+              >
+                <span>CASE STUDIES</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </motion.div>
         </motion.div>
       </Container>
     </section>

@@ -7,7 +7,11 @@ import { Button } from '../components/ui/Button';
 export const NotFoundPage: React.FC = () => {
   return (
     <div className="pt-32 pb-20 min-h-[75vh] flex items-center justify-center">
-      <SEO title="404 - Node Not Found" />
+      <SEO
+        title="404 — Page Not Found | LogicMM"
+        description="The requested industrial automation portfolio page or document was not found."
+        noindex={true}
+      />
       <Container size="md" className="text-center space-y-5">
         <div className="inline-flex p-4 rounded-2xl bg-surface border border-border text-accent mb-2">
           <Terminal className="w-8 h-8" />
