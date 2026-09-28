@@ -6,6 +6,7 @@ export interface SEOProps {
   description?: string;
   canonicalPath?: string;
   ogType?: 'website' | 'article' | 'profile';
+  ogImage?: string;
   noindex?: boolean;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
@@ -15,12 +16,13 @@ export const SEO: React.FC<SEOProps> = ({
   description,
   canonicalPath = '/',
   ogType = 'website',
+  ogImage = 'https://logicmm.com/og-image.png',
   noindex = false,
   schema
 }) => {
   useEffect(() => {
     // Primary title calculation
-    const defaultTitle = `${profileData.name} | ${profileData.primaryTitle} | Industrial Automation`;
+    const defaultTitle = `${profileData.name} | Industrial Automation Engineer`;
     const finalTitle = title ? title.trim() : defaultTitle;
     document.title = finalTitle;
 
@@ -29,9 +31,10 @@ export const SEO: React.FC<SEOProps> = ({
 
     // Canonical URL normalization (strict HTTPS logicmm.com without query, hash, or trailing duplicates)
     const normalizedPath = canonicalPath.replace(/[?#].*$/, '').trim();
-    const cleanPath = normalizedPath === '/' || normalizedPath === ''
-      ? '/'
-      : `/${normalizedPath.replace(/^\/+|\/+$/g, '')}`;
+    const cleanPath =
+      normalizedPath === '/' || normalizedPath === ''
+        ? '/'
+        : `/${normalizedPath.replace(/^\/+|\/+$/g, '')}`;
     const canonicalUrl = `https://logicmm.com${cleanPath}`;
 
     // Helper to create or update meta tag by name or property
@@ -73,17 +76,24 @@ export const SEO: React.FC<SEOProps> = ({
     setMetaTag('property', 'og:type', ogType);
     setMetaTag('property', 'og:site_name', 'LogicMM');
     setMetaTag('property', 'og:locale', 'en_US');
+    setMetaTag('property', 'og:image', ogImage);
+    setMetaTag('property', 'og:image:width', '1200');
+    setMetaTag('property', 'og:image:height', '630');
+    setMetaTag('property', 'og:image:alt', `${finalTitle} - LogicMM`);
 
     // Twitter Card Metadata
-    setMetaTag('name', 'twitter:card', 'summary');
+    setMetaTag('name', 'twitter:card', 'summary_large_image');
     setMetaTag('name', 'twitter:title', finalTitle);
     setMetaTag('name', 'twitter:description', finalDescription);
     setMetaTag('name', 'twitter:url', canonicalUrl);
-    // Legacy property compatibility for scrapers looking for property="twitter:*"
-    setMetaTag('property', 'twitter:card', 'summary');
+    setMetaTag('name', 'twitter:image', ogImage);
+
+    // Legacy property compatibility
+    setMetaTag('property', 'twitter:card', 'summary_large_image');
     setMetaTag('property', 'twitter:title', finalTitle);
     setMetaTag('property', 'twitter:description', finalDescription);
     setMetaTag('property', 'twitter:url', canonicalUrl);
+    setMetaTag('property', 'twitter:image', ogImage);
 
     // Page-specific JSON-LD Structured Data
     const existingScript = document.head.querySelector('script#page-structured-data');
@@ -91,14 +101,22 @@ export const SEO: React.FC<SEOProps> = ({
       const scriptElement = existingScript || document.createElement('script');
       scriptElement.setAttribute('id', 'page-structured-data');
       scriptElement.setAttribute('type', 'application/ld+json');
-      scriptElement.textContent = JSON.stringify(schema, null, 2);
+
+      const formattedSchema = Array.isArray(schema)
+        ? {
+            '@context': 'https://schema.org',
+            '@graph': schema
+          }
+        : schema;
+
+      scriptElement.textContent = JSON.stringify(formattedSchema, null, 2);
       if (!existingScript) {
         document.head.appendChild(scriptElement);
       }
     } else if (existingScript) {
       existingScript.remove();
     }
-  }, [title, description, canonicalPath, ogType, noindex, schema]);
+  }, [title, description, canonicalPath, ogType, ogImage, noindex, schema]);
 
   return null;
 };

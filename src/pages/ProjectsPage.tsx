@@ -25,12 +25,32 @@ export const ProjectsPage: React.FC = () => {
       ? projectsData
       : projectsData.filter((p) => p.category === selectedCategory);
 
+  const breadcrumbsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://logicmm.com/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Projects',
+        item: 'https://logicmm.com/projects'
+      }
+    ]
+  };
+
   return (
     <div className="pt-20">
       <SEO
-        title="Industrial Automation Projects | PLC, HMI & Machine Automation | LogicMM"
+        title="Industrial Automation Projects | LogicMM"
         description="Verified industrial automation projects and engineering case studies including Cartesian Robot, Vision Inspection, Ultrasonic Cleaning, Vacuum Distillation, and Bespoke Machine Automation."
         canonicalPath="/projects"
+        schema={breadcrumbsSchema}
       />
       <Section spacing="normal">
         <Container size="xl">

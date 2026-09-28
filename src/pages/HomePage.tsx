@@ -15,7 +15,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Prasanna Venkat Ramana | Automation Engineer | Industrial Automation"
+        title="Prasanna Venkat Ramana | Industrial Automation Engineer"
         description="Prasanna Venkat Ramana is an Automation Engineer based in Bengaluru, Karnataka, India, specializing in industrial automation systems, PLC programming, HMI development, motion control, and machine automation."
         canonicalPath="/"
       />

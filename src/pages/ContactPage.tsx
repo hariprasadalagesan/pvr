@@ -19,13 +19,31 @@ export const ContactPage: React.FC = () => {
       'Contact Prasanna Venkat Ramana for industrial automation projects, machine control engineering, PLC and HMI development, and technical collaboration in Bengaluru, India.'
   };
 
+  const breadcrumbsSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://logicmm.com/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Contact',
+        item: 'https://logicmm.com/contact'
+      }
+    ]
+  };
+
   return (
     <div className="pt-20">
       <SEO
-        title="Contact Prasanna Venkat Ramana | Automation Engineer | LogicMM"
+        title="Contact Prasanna Venkat Ramana | LogicMM"
         description="Contact Prasanna Venkat Ramana for industrial automation projects, machine control engineering, PLC and HMI development, and technical collaboration in Bengaluru, India."
         canonicalPath="/contact"
-        schema={contactSchema}
+        schema={[contactSchema, breadcrumbsSchema]}
       />
       <ContactSection isPagePrimary />
     </div>

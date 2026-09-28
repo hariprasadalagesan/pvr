@@ -74,6 +74,30 @@ export const ProjectDetailPage: React.FC = () => {
     keywords: project.technologies ? project.technologies.join(', ') : 'Industrial Automation'
   };
 
+  const breadcrumbsSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://logicmm.com/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Projects',
+        item: 'https://logicmm.com/projects'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: project.title,
+        item: `https://logicmm.com/projects/${project.slug}`
+      }
+    ]
+  };
+
   return (
     <div className="pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24 bg-background min-h-screen">
       <SEO
@@ -81,7 +105,7 @@ export const ProjectDetailPage: React.FC = () => {
         description={projectDescription}
         canonicalPath={`/projects/${project.slug}`}
         ogType="article"
-        schema={projectSchema}
+        schema={[projectSchema, breadcrumbsSchema]}
       />
 
       <Container size="xl">

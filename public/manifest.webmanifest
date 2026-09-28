@@ -1,0 +1,17 @@
+{
+  "name": "Prasanna Venkat Ramana | Industrial Automation Engineer",
+  "short_name": "LogicMM",
+  "description": "Industrial automation systems portfolio of Prasanna Venkat Ramana, Automation Engineer based in Bengaluru, India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090A0C",
+  "theme_color": "#090A0C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
